@@ -5,3 +5,25 @@
     padding-top: 8%;
     padding-bottom: 6%;
 }
+
+
+
+.body {
+    background-color: lightblue;
+}
+
+.h1 {
+    background-color: green;
+    background-image: url("img_tree.png");
+        background-repeat: no-repeat;
+        background-position: right top;
+
+}
+
+div {
+    background-color: lightblue;
+}
+
+p {
+    background-color: yellow;
+}
