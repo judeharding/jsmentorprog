@@ -17,3 +17,14 @@
 #logo img {
     width: 300px;
 }
+<style>
+.leftimage{
+float:left;
+}
+.centerspace{
+float:left;
+}
+.rightimage{
+float:right;
+}
+</style>
