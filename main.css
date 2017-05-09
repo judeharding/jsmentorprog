@@ -1,29 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,100italic|Roboto+Mono:400,100italic,700);
+
 .title {
     font-size: 3em;
     color: #024656;
     text-align: center;
+    font-family: 'Roboto';
     padding-top: 8%;
     padding-bottom: 6%;
 }
 
-
-
-.body {
-    background-color: lightblue;
+#logo {
+    text-align: center;
+    padding-bottom: 1%;
 }
 
-.h1 {
-    background-color: green;
-    background-image: url("img_tree.png");
-        background-repeat: no-repeat;
-        background-position: right top;
-
-}
-
-div {
-    background-color: lightblue;
-}
-
-p {
-    background-color: yellow;
+#logo img {
+    width: 300px;
 }
