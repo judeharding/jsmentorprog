@@ -1,20 +1,35 @@
-var arr = [1, 2, 3];
 
-arr.length;
-// 3
 
-delete arr[1];
-// removes "2" since it is a zero based array
 
-arr[1];
-// is undefined
 
-arr.length;
-// is still 3 WHY
 
-var remove = arr.splice(1, 1);
 
-arr.lenght;
+
+
+
+
+
+
+
+
+
+// var arr = [1, 2, 3];
+//
+// arr.length;
+// // 3
+//
+// delete arr[1];
+// // removes "2" since it is a zero based array
+//
+// arr[1];
+// // is undefined
+//
+// arr.length;
+// // is still 3 WHY
+//
+// var remove = arr.splice(1, 1);
+//
+// arr.lenght;
 
 // notes from today's meeting
 //

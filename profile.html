@@ -5,7 +5,7 @@
   <form action="welcome_get.php" method="get">
     <div>
       First name: <span style="color:red">*</span><br>
-      <input type="text" name="firstname" value="" required autofocus>
+      <input type="text" name="firstname" value="" onblur="blurFunction()" required autofocus>
     </div>
 
     <div>
@@ -23,10 +23,17 @@
       <button type="submit" formaction="welcome_get.php">WELCOME</button>
     <div>
 
+      <script>
+
+      function blurFunction() {
+      // No focus = Changes the background color of input to red
+      echo "Hello  " + firstname;
+      }
+    </script>
 
   </form>
 
 
-
+  <script src="main.js" >
 </body>
 </html>
