@@ -2,20 +2,43 @@
 <html>
 <body>
 
-  <form action="welcome_get.php" method="get">
+  <form name="myForm">
+    <!-- first name field -->
     <div>
       First name: <span style="color:red">*</span><br>
-      <input type="text" name="firstname" value="" onblur="blurFunction()" required autofocus>
+      <input type="text" id="fname" name="firstname" value="" required autofocus>
+      <script>
+        document.getElementById("fname").addEventListener("blur", myFunction1);
+        function myFunction1() {
+          alert("Your first name is " + fname + "!");
+          // alert("Your first name is " + document.getElementById.fname.value + "!");
+      }
+      </script>
     </div>
 
+    <!-- e mail field -->
     <div>
       E-mail: <span style="color:red">*</span><br>
-      <input type="text" name="email" value="" required>
+      <input type="text" id="em" name="email" value="" required>
+      <!-- <script>
+        document.getElementById("em").addEventListener("blur", myFunction2);
+        function myFunction2() {
+          alert("Your e-mail is " + em + "!");
+      }
+      </script> -->
     </div>
 
+    <!-- birthday field -->
     <div>
       Birthday: <span style="color:red">*</span><br>
-      <input type="text" name="birthday" value="" required>
+      <input type="text" id="bd" name="birthday" value="" required>
+      <script>
+        document.getElementById("bd").addEventListener("blur", myFunction3);
+
+        function myFunction3() {
+          alert("Your birthday is " + bd + "!");
+      }
+      </script>
     </div>
 
     <div>
@@ -23,17 +46,21 @@
       <!-- <button type="submit" formaction="welcome_get.html">WELCOME</button> -->
     <div>
 
-      <script>
-
-      function blurFunction() {
-      // No focus = Changes the background color of input to red
-      echo "Hello  " + firstname;
-      }
-    </script>
 
   </form>
 
+    <!-- <script>
+      document.getElementById("firstname").addEventListener("blur", myFunction1);
 
-  <script src="main.js" >
+      function myFunction1() {
+        echo("Your first name is " + firstname);
+    }
+    </script> -->
+
+
+
+  <script>
+   document.getElementsByName("firstname")[0].value;
+  </script>
 </body>
 </html>
