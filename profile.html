@@ -2,66 +2,94 @@
 <html>
 <body>
 
-  <form name="myForm">
-    <!-- first name field -->
-    <!-- NOTE - make a variable to hold the values from the fields -->
+  <form name="myForm" action="index.html" method="post">
+
     <div>
       First name: <span style="color:red">*</span><br>
-      <input type="text" id="fname" name="firstname" value="" required autofocus>
-      <script>
-        document.getElementById("fname").addEventListener("blur", myFunction1);
-        function myFunction1() {
-          alert("Your first name is " + fname + "!");
-          // alert("Your first name is " + document.getElementById.fname.value + "!");
-      }
-      </script>
+      <input type="text" id="fname" name="fname" value="" onblur="sayHello()">
     </div>
 
     <!-- e mail field -->
     <div>
       E-mail: <span style="color:red">*</span><br>
-      <input type="text" id="em" name="email" value="" required>
-      <!-- <script>
-        document.getElementById("em").addEventListener("blur", myFunction2);
-        function myFunction2() {
-          alert("Your e-mail is " + em + "!");
-      }
-      </script> -->
+      <input type="text" id="email" name="email" value="" onblur="checkEmail()" >
     </div>
+    <div id="invalidEmailMsg"></div>
 
     <!-- birthday field -->
     <div>
       Birthday: <span style="color:red">*</span><br>
-      <input type="text" id="bd" name="birthday" value="" required>
-      <script>
-        document.getElementById("bd").addEventListener("blur", myFunction3);
-
-        function myFunction3() {
-          alert("Your birthday is " + bd + "!");
-      }
-      </script>
+      <input type="text" id="birthday" name="birthday" value="" onblur="checkBirthday()">
     </div>
 
     <div>
-      <button type="submit" formaction="index.html">Return Home</button>
-      <!-- <button type="submit" formaction="welcome_get.html">WELCOME</button> -->
-    <div>
+      <button type="submit" name="submit">Return Home</button>
+  </div>
+
 
 
   </form>
 
-    <!-- <script>
-      document.getElementById("firstname").addEventListener("blur", myFunction1);
+    <!-- this div displays the first name on blur of the field  -->
+    <div id="displayFN"></div>
 
-      function myFunction1() {
-        echo("Your first name is " + firstname);
-    }
-    </script> -->
+    <!-- this div displays the email on blur of the field  -->
+    <div id="displayEmail"></div>
 
+    <!-- this div displays the email on blur of the field  -->
+    <div id="displayBirthdayMinutes"></div>
+    <div id="displayBirthdayHours"></div>
+    <div id="displayBirthdayDays"></div>
+    <div id="displayBirthdayYears"></div>
 
-
-  <!-- <script>
-   document.getElementsByName("firstname")[0].value;
-  </script> -->
 </body>
+
+<script type="text/javascript">
+    function sayHello() {
+        // var firstname = document.myForm.fname.value;
+        var firstname = document.getElementById("fname").value;
+        document.getElementById("displayFN").innerHTML = "hello " + firstname;
+    }
+
+    function checkEmail() {
+        // var email = document.myForm.email.value;
+        var email = document.getElementById("email").value;
+        console.log(email);
+        document.getElementById("displayEmail").innerHTML = "your email is " + email;
+
+        validateForm();
+    }
+
+    function validateForm() {
+        var x = document.getElementById("email").value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+            document.getElementById("email").value = "";
+            document.getElementById("invalidEmailMsg").innerHTML = "enter a GOOD e-mail address -loser ";
+            return false;
+        } else {
+            if (document.getElementById("invalidEmailMsg").innerHTML == "") {
+                // do nothing
+            } else {
+                document.getElementById("invalidEmailMsg").innerHTML = "";
+            }
+        }
+    }
+
+    function checkBirthday() {
+        var birthday = document.getElementById("birthday").value;
+        var prevTime = new Date(birthday);  // birthday
+        var thisTime = new Date();              // now
+        var diff = thisTime.getTime() - prevTime.getTime();   // now - birthday
+        // alert(diff / (1000*60*60*24*365));     // positive number of days
+        // console.log(diff);
+        document.getElementById("displayBirthdayMinutes").innerHTML = "you are " + diff/(1000*60) + " minutes old.";
+        document.getElementById("displayBirthdayHours").innerHTML = "you are " + diff/(1000*60*60) + " hours old.";
+        document.getElementById("displayBirthdayDays").innerHTML = "you are " + diff/(1000*60*60*24) + " days old.";
+        document.getElementById("displayBirthdayYears").innerHTML = "you are " + diff/(1000*60*60*24*365) + " years old.";
+    }
+</script>
+
+<!-- <script src="app.js" charset="utf-8"></script> -->
 </html>
