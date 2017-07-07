@@ -22,9 +22,9 @@
       <input type="text" id="birthday" name="birthday" value="" onblur="checkBirthday()">
     </div>
 
-    <div>
+    <div id="submitButton">
       <button type="submit" name="submit">Return Home</button>
-  </div>
+    </div>
 
 
 
@@ -45,19 +45,28 @@
 </body>
 
 <script type="text/javascript">
+
+    var firstname = document.getElementById('fname');
+    var email = document.getElementById('email');
+    var birthday = document.getElementById('birthday');
+
+    firstname.focus();
+
+    document.getElementById('submitButton').style.visibility = 'hidden';
+
     function sayHello() {
-        // var firstname = document.myForm.fname.value;
-        var firstname = document.getElementById("fname").value;
-        document.getElementById("displayFN").innerHTML = "hello " + firstname;
+        displaySubmitButton();
+        if (firstname.value != "") {
+            document.getElementById("displayFN").innerHTML = "hello " + firstname.value;
+        }
     }
 
     function checkEmail() {
-        // var email = document.myForm.email.value;
-        var email = document.getElementById("email").value;
-        console.log(email);
-        document.getElementById("displayEmail").innerHTML = "your email is " + email;
-
-        validateForm();
+        if (email.value != "") {
+            document.getElementById("displayEmail").innerHTML = "your email is " + email.value;
+            validateForm();
+        }
+        displaySubmitButton();
     }
 
     function validateForm() {
@@ -66,29 +75,40 @@
         var dotpos = x.lastIndexOf(".");
         if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
             document.getElementById("email").value = "";
-            document.getElementById("invalidEmailMsg").innerHTML = "enter a GOOD e-mail address -loser ";
+            email.focus();
+            document.getElementById("invalidEmailMsg").innerHTML = "enter a GOOD e-mail address - LOSER  ";
             return false;
         } else {
             if (document.getElementById("invalidEmailMsg").innerHTML == "") {
-                // do nothing
+                displaySubmitButton();
             } else {
                 document.getElementById("invalidEmailMsg").innerHTML = "";
+                displaySubmitButton();
             }
         }
     }
 
     function checkBirthday() {
-        var birthday = document.getElementById("birthday").value;
-        var prevTime = new Date(birthday);  // birthday
-        var thisTime = new Date();              // now
-        var diff = thisTime.getTime() - prevTime.getTime();   // now - birthday
-        // alert(diff / (1000*60*60*24*365));     // positive number of days
-        // console.log(diff);
-        document.getElementById("displayBirthdayMinutes").innerHTML = "you are " + diff/(1000*60) + " minutes old.";
-        document.getElementById("displayBirthdayHours").innerHTML = "you are " + diff/(1000*60*60) + " hours old.";
-        document.getElementById("displayBirthdayDays").innerHTML = "you are " + diff/(1000*60*60*24) + " days old.";
-        document.getElementById("displayBirthdayYears").innerHTML = "you are " + diff/(1000*60*60*24*365) + " years old.";
+        displaySubmitButton();
+        if (birthday.value != "") {
+            var prevTime = new Date(birthday.value);  // birthday
+            var thisTime = new Date();              // now
+            var diff = thisTime.getTime() - prevTime.getTime();   // now - birthday
+            document.getElementById("displayBirthdayMinutes").innerHTML = "you are " + diff/(1000*60) + " minutes old.";
+            document.getElementById("displayBirthdayHours").innerHTML = "you are " + diff/(1000*60*60) + " hours old.";
+            document.getElementById("displayBirthdayDays").innerHTML = "you are " + diff/(1000*60*60*24) + " days old.";
+            document.getElementById("displayBirthdayYears").innerHTML = "you are " + diff/(1000*60*60*24*365) + " years old.";
+        }
     }
+
+    function displaySubmitButton(){
+        if ((firstname.value != "") && (email.value != "") && (birthday.value != "")) {
+            document.getElementById('submitButton').style.visibility = 'visible';
+        } else{
+            document.getElementById('submitButton').style.visibility = 'hidden';
+        }
+    }
+
 </script>
 
 <!-- <script src="app.js" charset="utf-8"></script> -->

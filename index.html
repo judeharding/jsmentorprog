@@ -3,36 +3,40 @@
 <head>
     <title>JS Mentor Project</title>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <style>
-    #grad1 {
-    height: 55px;
-    background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
-    }
-    </style>
+    <!-- <script type="text/javascript">
+        insertHeader();
+
+        function insertHeader(){
+            document.getElementById("header").innerHTML = '<object type="text/html" data="header.html"></object>'
+        }
+
+    </script> -->
 </head>
 <body>
-  <div id = "grad1"
 
-
-  <div style="width: 1000px;">
-   <div style="float: left; width: 500px;" align="left">logo</div>
-   <div style="float: left; width: 500px;" align="right">date</div>
-   <br style="clear: left;" />
- </div>
-<!-- love the grad1 -->
-
-  </div>
-
+    <div id="header"></div>
 
     <div class="title" align="center">
         WELCOME
     </div>
-    <div align="center">
-      <a href="profile.html"><button>PROFILE</button></a>
+
+    <div class="btnCenter">
+      <!-- <button class="profileButton"><a href="profile.html">PROFILE</a></button> -->
+      <a href="profile.html" class="profileLink">XXX</a>
     </div>
 
-    <script src="main.js" >
+    <script type="text/javascript">
+        // writeDate();
 
+        function writeDate(){
+            var today = new Date();
+            var month = today.getMonth() +1;
+            var day = today.getDate();
+            var year = today.getFullYear();
+            var date = month + "/" + day + "/" + year;
+            document.getElementById('date').innerHTML = date;
+        }
     </script>
+
 </body>
 </html>

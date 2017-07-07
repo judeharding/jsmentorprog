@@ -1,14 +1,52 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,100italic|Roboto+Mono:400,100italic,700);
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,100italic|Roboto+Mono:400,100italic,700);*/
 
 .title {
     font-size: 3em;
     color: #024656;
     text-align: center;
-    font-family: 'Roboto';
+    /*font-family: 'Roboto';*/
     padding-top: 8%;
     padding-bottom: 6%;
 }
 
+.logo{
+    height: 3em;
+    float: left;
+}
+
+.date{
+    float:right;
+    padding-top: 1em;
+    padding-right: 1em;
+}
+
+.profileLink {
+    border: 1px solid blue;
+    padding: 1em;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+.profileButton{
+    background-color: blue;
+}
+.profileButton:hover {
+    background-color: yellow;
+}
+
+.profileButton a{
+    color: white;
+    text-decoration: none;
+}
+.profileButton a:hover{
+    color: black;
+}
+
+.btnCenter {
+    text-align: center;
+}
+/*
 #logo {
     text-align: left;
     padding-bottom: 1%;
@@ -17,14 +55,18 @@
 #logo img {
     width: 300px;
 }
-<style>
+
 .leftimage{
-float:left;
+    float:left;
 }
 .centerspace{
-float:left;
+    float:left;
 }
 .rightimage{
-float:right;
+    float:right;
+}*/
+
+#grad1 {
+    height: 3em;
+    background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
 }
-</style>
