@@ -28,24 +28,17 @@
     color: white;
     border-radius: 5px;
 }
-.profileButton{
-    background-color: blue;
-}
-.profileButton:hover {
-    background-color: yellow;
-}
 
-.profileButton a{
-    color: white;
-    text-decoration: none;
-}
-.profileButton a:hover{
+.btnCenter a:hover{
     color: black;
+    background-color: yellow;
 }
 
 .btnCenter {
     text-align: center;
 }
+
+
 /*
 #logo {
     text-align: left;
