@@ -12,73 +12,67 @@
 </head>
 <body>
     <div class="container-fluid">
-        <form class="form-horizontal" name="myForm" action="index.html" method="post">
-            <div class="form-group">
-                <label for="fname" class="col-sm-2 control-label">First Name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="fname" name="fname" onblur="sayHello()" placeholder="Enter Your First Name">
-                </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <form class="form-horizontal" name="myForm" action="index.html" method="post">
+                    <div class="form-group">
+                        <label for="fname" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="fname" name="fname" onblur="sayHello()" placeholder="Enter Your First Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">E-Mail</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" name="email" onblur="checkEmail()" placeholder="Enter Your E-mail">
+                        </div>
+                    </div>
+                    <div id="invalidEmailMsg"></div>
+
+                    <div class="form-group">
+                        <label for="birthday" class="col-sm-2 control-label">Birthday</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="birthday" name="birthday" onblur="checkBirthday()" placeholder="Enter Your Birthday">
+                        </div>
+                    </div>
+
+                    <div id="submitButton" class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" name="submit" class="btn btn-success">Return Home</button>
+                        </div>
+                    </div>
+                </form>
             </div>
+            <div class="col-sm-6">
+                <!-- this div displays the first name on blur of the field  -->
+                <div id="displayFN"></div>
 
-            <div class="form-group">
-                <label for="email" class="col-sm-2 control-label">E-Mail</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="email" name="email" onblur="checkEmail()" placeholder="Enter Your E-mail">
-                </div>
+                <!-- this div displays the email on blur of the field  -->
+                <div id="displayEmail"></div>
+
+                <!-- this div displays the email on blur of the field  -->
+                <div id="displayBirthdayMinutes"></div>
+                <div id="displayBirthdayHours"></div>
+                <div id="displayBirthdayDays"></div>
+                <div id="displayBirthdayYears"></div>
+
             </div>
-            <div id="invalidEmailMsg"></div>
-
-            <div class="form-group">
-                <label for="birthday" class="col-sm-2 control-label">Birthday</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="birthday" name="birthday" onblur="checkBirthday()" placeholder="Enter Your Birthday">
-                </div>
-            </div>
-
-            <div id="submitButton" class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" name="submit" class="btn btn-success">Return Home</button>
-                </div>
-            </div>
-
-    <!-- <div>
-      First name: <span style="color:red">*</span><br>
-      <input type="text" id="fname" name="fname" value="" onblur="sayHello()">
-    </div> -->
-
-    <!-- e mail field -->
-    <!-- <div>
-      E-mail: <span style="color:red">*</span><br>
-      <input type="text" id="email" name="email" value="" onblur="checkEmail()" >
+        </div>
     </div>
-    <div id="invalidEmailMsg"></div> -->
-
-    <!-- birthday field -->
-    <!-- <div>
-      Birthday: <span style="color:red">*</span><br>
-      <input type="text" id="birthday" name="birthday" value="" onblur="checkBirthday()">
-    </div>
-
-    <div id="submitButton">
-      <button type="submit" name="submit">Return Home</button>
-    </div> -->
-
-
-
-  </form>
 
     <!-- this div displays the first name on blur of the field  -->
-    <div id="displayFN"></div>
+    <!-- <div id="displayFN"></div> -->
 
     <!-- this div displays the email on blur of the field  -->
-    <div id="displayEmail"></div>
+    <!-- <div id="displayEmail"></div> -->
 
     <!-- this div displays the email on blur of the field  -->
-    <div id="displayBirthdayMinutes"></div>
-    <div id="displayBirthdayHours"></div>
+    <!-- <div id="displayBirthdayMinutes"></div> -->
+    <!-- <div id="displayBirthdayHours"></div>
     <div id="displayBirthdayDays"></div>
-    <div id="displayBirthdayYears"></div>
-    </div>
+    <div id="displayBirthdayYears"></div> -->
+
 </body>
 
 <script type="text/javascript">
