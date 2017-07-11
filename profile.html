@@ -1,30 +1,67 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
 <body>
+    <div class="container-fluid">
+        <form class="form-horizontal" name="myForm" action="index.html" method="post">
+            <div class="form-group">
+                <label for="fname" class="col-sm-2 control-label">First Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="fname" name="fname" onblur="sayHello()" placeholder="Enter Your First Name">
+                </div>
+            </div>
 
-  <form name="myForm" action="index.html" method="post">
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">E-Mail</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email" name="email" onblur="checkEmail()" placeholder="Enter Your E-mail">
+                </div>
+            </div>
+            <div id="invalidEmailMsg"></div>
 
-    <div>
+            <div class="form-group">
+                <label for="birthday" class="col-sm-2 control-label">Birthday</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="birthday" name="birthday" onblur="checkBirthday()" placeholder="Enter Your Birthday">
+                </div>
+            </div>
+
+            <div id="submitButton" class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" name="submit" class="btn btn-success">Return Home</button>
+                </div>
+            </div>
+
+    <!-- <div>
       First name: <span style="color:red">*</span><br>
       <input type="text" id="fname" name="fname" value="" onblur="sayHello()">
-    </div>
+    </div> -->
 
     <!-- e mail field -->
-    <div>
+    <!-- <div>
       E-mail: <span style="color:red">*</span><br>
       <input type="text" id="email" name="email" value="" onblur="checkEmail()" >
     </div>
-    <div id="invalidEmailMsg"></div>
+    <div id="invalidEmailMsg"></div> -->
 
     <!-- birthday field -->
-    <div>
+    <!-- <div>
       Birthday: <span style="color:red">*</span><br>
       <input type="text" id="birthday" name="birthday" value="" onblur="checkBirthday()">
     </div>
 
     <div id="submitButton">
       <button type="submit" name="submit">Return Home</button>
-    </div>
+    </div> -->
 
 
 
@@ -41,7 +78,7 @@
     <div id="displayBirthdayHours"></div>
     <div id="displayBirthdayDays"></div>
     <div id="displayBirthdayYears"></div>
-
+    </div>
 </body>
 
 <script type="text/javascript">
